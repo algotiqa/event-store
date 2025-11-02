@@ -1,9 +1,9 @@
-module github.com/bit-fever/event-store
+module github.com/tradalia/event-store
 
 go 1.24.0
 
 require (
-	github.com/bit-fever/core v1.10.10
+	github.com/tradalia/core v1.10.10
 	github.com/gin-gonic/gin v1.10.1
 	github.com/go-sql-driver/mysql v1.9.3 // indirect
 	github.com/spf13/viper v1.21.0 // indirect

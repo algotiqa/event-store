@@ -25,9 +25,9 @@ THE SOFTWARE.
 package service
 
 import (
-	"github.com/bit-fever/core/auth"
-	"github.com/bit-fever/event-store/pkg/business"
-	"github.com/bit-fever/event-store/pkg/db"
+	"github.com/tradalia/core/auth"
+	"github.com/tradalia/event-store/pkg/business"
+	"github.com/tradalia/event-store/pkg/db"
 	"gorm.io/gorm"
 )
 

@@ -27,7 +27,7 @@ package db
 import (
 	"time"
 
-	"github.com/bit-fever/core/msg"
+	"github.com/tradalia/core/msg"
 )
 
 //=============================================================================

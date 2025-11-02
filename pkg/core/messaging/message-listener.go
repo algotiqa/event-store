@@ -31,8 +31,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/bit-fever/core/msg"
-	"github.com/bit-fever/event-store/pkg/db"
+	"github.com/tradalia/core/msg"
+	"github.com/tradalia/event-store/pkg/db"
 	"gorm.io/gorm"
 )
 

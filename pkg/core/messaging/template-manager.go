@@ -27,7 +27,7 @@ package messaging
 import (
 	"os"
 
-	"github.com/bit-fever/core"
+	"github.com/tradalia/core"
 	"gopkg.in/yaml.v3"
 )
 

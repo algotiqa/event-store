@@ -27,10 +27,10 @@ package service
 import (
 	"log/slog"
 
-	"github.com/bit-fever/core/auth"
-	"github.com/bit-fever/core/auth/roles"
-	"github.com/bit-fever/core/req"
-	"github.com/bit-fever/event-store/pkg/app"
+	"github.com/tradalia/core/auth"
+	"github.com/tradalia/core/auth/roles"
+	"github.com/tradalia/core/req"
+	"github.com/tradalia/event-store/pkg/app"
 	"github.com/gin-gonic/gin"
 )
 

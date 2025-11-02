@@ -28,7 +28,7 @@ import (
 	"log/slog"
 	"time"
 
-	"github.com/bit-fever/core"
+	"github.com/tradalia/core"
 	"gorm.io/driver/mysql"
 
 	"gorm.io/gorm"

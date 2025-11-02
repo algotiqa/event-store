@@ -25,14 +25,14 @@ THE SOFTWARE.
 package main
 
 import (
-	"github.com/bit-fever/core/auth"
-	"github.com/bit-fever/core/boot"
-	"github.com/bit-fever/core/msg"
-	"github.com/bit-fever/core/req"
-	"github.com/bit-fever/event-store/pkg/app"
-	"github.com/bit-fever/event-store/pkg/core/messaging"
-	"github.com/bit-fever/event-store/pkg/db"
-	"github.com/bit-fever/event-store/pkg/service"
+	"github.com/tradalia/core/auth"
+	"github.com/tradalia/core/boot"
+	"github.com/tradalia/core/msg"
+	"github.com/tradalia/core/req"
+	"github.com/tradalia/event-store/pkg/app"
+	"github.com/tradalia/event-store/pkg/core/messaging"
+	"github.com/tradalia/event-store/pkg/db"
+	"github.com/tradalia/event-store/pkg/service"
 
 	"log/slog"
 )
