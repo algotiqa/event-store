@@ -8,7 +8,7 @@ database:
   username: tradalia
   password: tradalia
 authentication:
-  authority: https://tradalia-server:8443/auth/realms/tradalia
+  authority: https://algotiqa-server:8443/auth/realms/algotiqa
 messaging:
   address: localhost:8450
   username: rabbit-admin

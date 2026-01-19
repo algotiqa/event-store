@@ -25,14 +25,14 @@ THE SOFTWARE.
 package main
 
 import (
-	"github.com/tradalia/core/auth"
-	"github.com/tradalia/core/boot"
-	"github.com/tradalia/core/msg"
-	"github.com/tradalia/core/req"
-	"github.com/tradalia/event-store/pkg/app"
-	"github.com/tradalia/event-store/pkg/core/messaging"
-	"github.com/tradalia/event-store/pkg/db"
-	"github.com/tradalia/event-store/pkg/service"
+	"github.com/algotiqa/core/auth"
+	"github.com/algotiqa/core/boot"
+	"github.com/algotiqa/core/msg"
+	"github.com/algotiqa/core/req"
+	"github.com/algotiqa/event-store/pkg/app"
+	"github.com/algotiqa/event-store/pkg/core/messaging"
+	"github.com/algotiqa/event-store/pkg/db"
+	"github.com/algotiqa/event-store/pkg/service"
 
 	"log/slog"
 )
@@ -47,7 +47,7 @@ func main() {
 	cfg := &app.Config{}
 	boot.ReadConfig(component, cfg)
 	logger := boot.InitLogger(component, &cfg.Application)
-	engine := boot.InitEngine(logger,    &cfg.Application)
+	engine := boot.InitEngine(logger, &cfg.Application)
 	initClients()
 	db.InitDatabase(&cfg.Database)
 	auth.InitAuthentication(&cfg.Authentication)

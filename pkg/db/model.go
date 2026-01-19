@@ -27,7 +27,7 @@ package db
 import (
 	"time"
 
-	"github.com/tradalia/core/msg"
+	"github.com/algotiqa/core/msg"
 )
 
 //=============================================================================
@@ -37,13 +37,13 @@ import (
 //=============================================================================
 
 type Event struct {
-	Id                   uint           `json:"id" gorm:"primaryKey"`
-	Username             string         `json:"username"`
-	EventDate            time.Time      `json:"eventDate"`
-	Level                msg.EventLevel `json:"level"`
-	Title                string         `json:"title"`
-	Message              string         `json:"message"`
-	Parameters           []byte         `json:"parameters"`
+	Id         uint           `json:"id" gorm:"primaryKey"`
+	Username   string         `json:"username"`
+	EventDate  time.Time      `json:"eventDate"`
+	Level      msg.EventLevel `json:"level"`
+	Title      string         `json:"title"`
+	Message    string         `json:"message"`
+	Parameters []byte         `json:"parameters"`
 }
 
 //=============================================================================
@@ -52,6 +52,6 @@ type Event struct {
 //===
 //=============================================================================
 
-func (Event) TableName() string { return "event"    }
+func (Event) TableName() string { return "event" }
 
 //=============================================================================

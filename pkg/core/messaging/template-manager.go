@@ -27,7 +27,7 @@ package messaging
 import (
 	"os"
 
-	"github.com/tradalia/core"
+	"github.com/algotiqa/core"
 	"gopkg.in/yaml.v3"
 )
 
@@ -61,15 +61,15 @@ func initTemplates() {
 //=============================================================================
 
 func buildTemplateMap(path string, currMap map[string]interface{}) {
-	title, ok  := currMap["title"]
+	title, ok := currMap["title"]
 	message, _ := currMap["message"]
-	level ,  _ := currMap["level"]
+	level, _ := currMap["level"]
 
 	if ok {
 		templates[path] = &Template{
-			Code   : path,
-			Level  : level.(string),
-			Title  : title.(string),
+			Code:    path,
+			Level:   level.(string),
+			Title:   title.(string),
 			Message: message.(string),
 		}
 	} else {

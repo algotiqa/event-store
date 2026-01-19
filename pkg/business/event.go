@@ -25,8 +25,8 @@ THE SOFTWARE.
 package business
 
 import (
-	"github.com/tradalia/core/auth"
-	"github.com/tradalia/event-store/pkg/db"
+	"github.com/algotiqa/core/auth"
+	"github.com/algotiqa/event-store/pkg/db"
 	"gorm.io/gorm"
 )
 

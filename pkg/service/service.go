@@ -27,10 +27,10 @@ package service
 import (
 	"log/slog"
 
-	"github.com/tradalia/core/auth"
-	"github.com/tradalia/core/auth/roles"
-	"github.com/tradalia/core/req"
-	"github.com/tradalia/event-store/pkg/app"
+	"github.com/algotiqa/core/auth"
+	"github.com/algotiqa/core/auth/roles"
+	"github.com/algotiqa/core/req"
+	"github.com/algotiqa/event-store/pkg/app"
 	"github.com/gin-gonic/gin"
 )
 
@@ -40,7 +40,7 @@ func Init(router *gin.Engine, cfg *app.Config, logger *slog.Logger) {
 
 	ctrl := auth.NewOidcController(cfg.Authentication.Authority, req.GetClient("bf"), logger, cfg)
 
-	router.GET ("/api/event/v1/events", ctrl.Secure(getEvents, roles.Admin_User))
+	router.GET("/api/event/v1/events", ctrl.Secure(getEvents, roles.Admin_User))
 }
 
 //=============================================================================

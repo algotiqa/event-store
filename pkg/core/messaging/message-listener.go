@@ -31,8 +31,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/tradalia/core/msg"
-	"github.com/tradalia/event-store/pkg/db"
+	"github.com/algotiqa/core/msg"
+	"github.com/algotiqa/event-store/pkg/db"
 	"gorm.io/gorm"
 )
 
@@ -54,7 +54,7 @@ func InitMessageListener() {
 	slog.Info("Starting message listeners...")
 	initTemplates()
 
-	go msg.ReceiveMessages(msg.QuAllToEvent,  handleEventMessage)
+	go msg.ReceiveMessages(msg.QuAllToEvent, handleEventMessage)
 }
 
 //=============================================================================
@@ -64,7 +64,7 @@ func handleEventMessage(m *msg.Message) bool {
 	slog.Info("handleEventMessage: New event message received", "source", m.Source, "type", m.Type)
 
 	if m.Source == msg.SourceEvent {
-		ev  := SentEvent{}
+		ev := SentEvent{}
 		err := json.Unmarshal(m.Entity, &ev)
 		if err != nil {
 			slog.Error("handleEventMessage: Dropping badly formatted message for event!", "entity", string(m.Entity))
@@ -132,21 +132,24 @@ func handleNewEvent(ev *SentEvent) bool {
 //=============================================================================
 
 func getTitleAndMessage(code string) (string, string, msg.EventLevel) {
-	t,ok := templates[code]
+	t, ok := templates[code]
 	if ok {
 		return t.Title, t.Message, convertLevel(t.Level)
 	}
 
-	return "?"+code+"?", "?Code not found?", msg.EventLevelError
+	return "?" + code + "?", "?Code not found?", msg.EventLevelError
 }
 
 //=============================================================================
 
 func convertLevel(level string) msg.EventLevel {
 	switch level {
-		case "INFO": return msg.EventLevelInfo
-		case "WARN": return msg.EventLevelWarning
-		default    : return msg.EventLevelError
+	case "INFO":
+		return msg.EventLevelInfo
+	case "WARN":
+		return msg.EventLevelWarning
+	default:
+		return msg.EventLevelError
 	}
 }
 
@@ -155,12 +158,12 @@ func convertLevel(level string) msg.EventLevel {
 func fillInParameters(title, message string, parameters map[string]any) (string, string) {
 	var err error
 
-	title,err = fillTemplate(title, parameters)
+	title, err = fillTemplate(title, parameters)
 	if err != nil {
 		return err.Error(), message
 	}
 
-	message,err = fillTemplate(message, parameters)
+	message, err = fillTemplate(message, parameters)
 	if err != nil {
 		return title, err.Error()
 	}
