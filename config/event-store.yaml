@@ -5,11 +5,11 @@ application:
 database:
   address: localhost:3403
   name: event
-  username: tradalia
-  password: tradalia
+  username: admin
+  password: admin
 authentication:
   authority: https://algotiqa-server:8443/auth/realms/algotiqa
 messaging:
   address: localhost:8450
-  username: rabbit-admin
-  password: rabbit.admin
+  username: admin
+  password: admin
