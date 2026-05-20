@@ -26,15 +26,15 @@ package service
 
 import (
 	"github.com/algotiqa/core/auth"
+	"github.com/algotiqa/core/dbms"
 	"github.com/algotiqa/event-store/pkg/business"
-	"github.com/algotiqa/event-store/pkg/db"
 	"gorm.io/gorm"
 )
 
 //=============================================================================
 
 func getEvents(c *auth.Context) {
-	err := db.RunInTransaction(func(tx *gorm.DB) error {
+	err := dbms.RunInTransaction(func(tx *gorm.DB) error {
 		list, err := business.GetEvents(tx, c)
 
 		if err != nil {

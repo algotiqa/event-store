@@ -38,7 +38,7 @@ import (
 
 func Init(router *gin.Engine, cfg *app.Config, logger *slog.Logger) {
 
-	ctrl := auth.NewOidcController(cfg.Authentication.Authority, req.GetClient("bf"), logger, cfg)
+	ctrl := auth.NewOidcController(cfg.Authentication.Authority, req.GetDefaultClient(), logger, cfg)
 
 	router.GET("/api/event/v1/events", ctrl.Secure(getEvents, roles.Admin_User))
 }

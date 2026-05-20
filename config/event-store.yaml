@@ -13,3 +13,8 @@ messaging:
   address: localhost:8450
   username: admin
   password: admin
+  journal:
+    directory      : .
+    queueSize      : 1000
+    compactMessages: 1000
+    dbSpoolInterval: 0

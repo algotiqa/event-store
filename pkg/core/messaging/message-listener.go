@@ -31,6 +31,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/algotiqa/core/dbms"
 	"github.com/algotiqa/core/msg"
 	"github.com/algotiqa/event-store/pkg/db"
 	"gorm.io/gorm"
@@ -118,7 +119,7 @@ func handleNewEvent(ev *SentEvent) bool {
 		Parameters: params,
 	}
 
-	err = db.RunInTransaction(func(tx *gorm.DB) error {
+	err = dbms.RunInTransaction(func(tx *gorm.DB) error {
 		return db.AddEvent(tx, &dvE)
 	})
 
