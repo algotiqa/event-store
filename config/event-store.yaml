@@ -3,18 +3,18 @@ application:
   production: false
   debug: false
 database:
-  address: localhost:3403
+  address: algotiqa-server:3403
   name: event
   username: admin
   password: admin
 authentication:
   authority: https://algotiqa-server:8443/auth/realms/algotiqa
 messaging:
-  address: localhost:8450
+  address: algotiqa-server:8450
   username: admin
   password: admin
   journal:
-    directory      : .
+    directory      : journal
     queueSize      : 1000
     compactMessages: 1000
     dbSpoolInterval: 0
