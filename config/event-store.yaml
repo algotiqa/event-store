@@ -3,14 +3,14 @@ application:
   production: false
   debug: false
 database:
-  address: algotiqa-server:3403
+  address: event-db:3306
   name: event
   username: admin
   password: admin
 authentication:
-  authority: https://algotiqa-server:8443/auth/realms/algotiqa
+  authority: https://algotiqa:8443/auth/realms/algotiqa
 messaging:
-  address: algotiqa-server:8450
+  address : rabbitmq:5672
   username: admin
   password: admin
   journal:
