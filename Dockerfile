@@ -20,15 +20,15 @@ RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-X main.version={{.Version}}" -o
 
 FROM gcr.io/distroless/static-debian12:nonroot
 
-WORKDIR /
+WORKDIR /app
 
 # Copy binary from builder
-COPY --from=builder /app/server /server
-COPY config/event-templates.yaml /config
+COPY --from=builder /app/server server
+COPY config/event-templates.yaml config/
 
 # Use a non-root user for security
 USER nonroot:nonroot
 
 EXPOSE 8453
 
-ENTRYPOINT ["/server"]
+ENTRYPOINT ["/app/server"]
