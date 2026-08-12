@@ -3,7 +3,7 @@ module github.com/algotiqa/event-store
 go 1.25.8
 
 require (
-	github.com/algotiqa/core v1.21.1
+	github.com/algotiqa/core v1.22.0
 	github.com/gin-gonic/gin v1.12.0
 	gopkg.in/yaml.v3 v3.0.1
 	gorm.io/gorm v1.31.1
