@@ -22,3 +22,18 @@ dc:
         It was not possible to calculate the rollover delta for {{.symbol}} because there is no data continuity between it and the next instrument.
         The virtual instrument ({{.virtual}}) is available but it will contain discontinuities on rollover dates.
         Please, check data availability with your provider ({{.system}} in this case).
+
+pt:
+  position:
+    cannotRetrieveAtr:
+      level  : ERROR
+      title  : "Cannot get ATR data for {{.symbol}}"
+      message: |
+        The position optimization process for the percent volatility model has been aborted because it was not possible 
+        to get ATR data from the Data Collector. The system under optimization was '{{.system}}'
+    cannotFindAtr:
+      level  : ERROR
+      title  : "Cannot some ATR values for {{.symbol}}"
+      message: |
+        The position optimization process for the percent volatility model has been aborted because it was not possible 
+        to find the ATR for some dates. Check the data product health. The system under optimization was '{{.system}}'
